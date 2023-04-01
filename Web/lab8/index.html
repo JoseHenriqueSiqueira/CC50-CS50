@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+
+            function questao(questao, resposta)
+            {
+                switch (questao)
+                {
+                    case 1:
+                        let q1 = document.getElementById('q1');
+                        let btn1 = document.getElementById(resposta);
+                        if (btn1.style.backgroundColor == "rgb(144, 238, 144)" || btn1.style.backgroundColor == "red")
+                        {
+                            btn1.style.backgroundColor = "#D9EDFF";
+                            q1.innerHTML = "";
+                        }
+                        else
+                        {
+                            if (resposta == '1_btn_1')
+                            {
+                                btn1.style.backgroundColor = "rgb(144, 238, 144)";
+                                q1.innerHTML = "Correto";
+                            }
+                            else
+                            {
+                                btn1.style.backgroundColor = "red";
+                                q1.innerHTML = "Errado";
+                            }
+                        }
+                        break;
+
+                    case 2:
+                        let q2 = document.getElementById('q2');
+                        let btn2 = document.getElementById(resposta);
+                        if (btn2.style.backgroundColor == "rgb(144, 238, 144)" || btn2.style.backgroundColor == "red")
+                        {
+                            btn2.style.backgroundColor = "#D9EDFF";
+                            q2.innerHTML = "";
+                        }
+                        else
+                        {
+                            if (resposta == '2_btn_4')
+                            {
+                                btn2.style.backgroundColor = "rgb(144, 238, 144)";
+                                q2.innerHTML = "Correto";
+                            }
+                            else
+                            {
+                                btn2.style.backgroundColor = "red";
+                                q2.innerHTML = "Errado";
+                            }
+                        }
+                        break;
+
+                    case 3:
+                        let q3 = document.getElementById('q3');
+                        let btn3 = document.getElementById(resposta);
+                        if (btn3.style.backgroundColor == "rgb(144, 238, 144)" || btn3.style.backgroundColor == "red")
+                        {
+                            btn3.style.backgroundColor = "#D9EDFF";
+                            q3.innerHTML = "";
+                        }
+                        else
+                        {
+                            if (resposta == '3_btn_2')
+                            {
+                                btn3.style.backgroundColor = "rgb(144, 238, 144)";
+                                q3.innerHTML = "Correto";
+                            }
+                            else
+                            {
+                                btn3.style.backgroundColor = "red";
+                                q3.innerHTML = "Errado";
+                            }
+                        }
+                        break;
+
+                }
+            }
+
+            function questao2(id)
+            {
+                let q4 = document.getElementById('q4');
+                let btn4 = document.getElementById(id)
+                let input_text = document.getElementById("input_id").value;
+                if (btn4.style.backgroundColor == "rgb(144, 238, 144)" || btn4.style.backgroundColor == "red")
+                {
+                    btn4.style.backgroundColor = "#D9EDFF";
+                    q4.innerHTML = "";
+                }
+                else
+                {
+                    if (input_text == "Viper" || input_text == "viper")
+                    {
+                        btn4.style.backgroundColor = "rgb(144, 238, 144)";
+                        q4.innerHTML = "Correto";
+                    }
+                    else
+                    {
+                        btn4.style.backgroundColor = "red";
+                        q4.innerHTML = "Errado";
+                    }
+                }
+
+            }
+
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                    <h3>Quem foi o primeiro vocalista da banda Angra?</h3>
+                    <h5 id="q1"></h5>
+                    <button id="1_btn_1" type="button" onclick="questao(1, this.id)">André Matos</button>
+                    <button id="1_btn_2" type="button" onclick="questao(1, this.id)">Fabio Lione</button>
+                    <button id="1_btn_3" type="button" onclick="questao(1, this.id)">Alírio Netto</button>
+                    <button id="1_btn_4" type="button" onclick="questao(1, this.id)">Edu Falaschi</button>
+                    <h3>Qual o primeiro album da banda Angra?</h3>
+                    <h5 id="q2"></h5>
+                    <button id="2_btn_1" type="button" onclick="questao(2, this.id)">Rebirth</button>
+                    <button id="2_btn_2" type="button" onclick="questao(2, this.id)">HolyLand</button>
+                    <button id="2_btn_3" type="button" onclick="questao(2, this.id)">Temple of Shadows</button>
+                    <button id="2_btn_4" type="button" onclick="questao(2, this.id)">Angels Cry</button>
+                    <h3>Quem foi o ultimo vocalista do Shaman?</h3>
+                    <h5 id="q3"></h5>
+                    <button id="3_btn_1" type="button" onclick="questao(3, this.id)">André Matos</button>
+                    <button id="3_btn_2" type="button" onclick="questao(3, this.id)">Alírio Netto</button>
+                    <button id="3_btn_3" type="button" onclick="questao(3, this.id)">Nando Fernandes</button>
+                    <button id="3_btn_4" type="button" onclick="questao(3, this.id)">Thiago Bianchi</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                    <h3>Qual foi a primeira banda do André Matos?</h3>
+                    <h5 id="q4"></h5>
+                    <input id="input_id" style="height: 25px;">
+                    <button id="4_btn_1" onclick="questao2(this.id)">Check Answer</button>
+            </div>
+
+        </div>
+    </body>
+</html>
